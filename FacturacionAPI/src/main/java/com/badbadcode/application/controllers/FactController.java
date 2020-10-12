@@ -5,19 +5,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.badbadcode.application.model.entity.Cliente;
-import com.badbadcode.application.model.services.ICliService;
+import com.badbadcode.application.model.entity.Factura;
+import com.badbadcode.application.model.services.IFactService;
 
 @RestController
-@RequestMapping("/APIcliente")
-public class CliRestController {
-	
+@RequestMapping("/APIfactura")
+public class FactController {
+
 	@Autowired
-	private ICliService clienteService;
+	private IFactService facturaService;
 	
-	@GetMapping("/clientes")
-	public Iterable<Cliente> index(){
-		return clienteService.findAll();
+	@GetMapping("/facturas")
+	public Iterable<Factura> index(){
+		return facturaService.findAll();
 	}
-	
 }
