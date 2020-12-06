@@ -27,6 +27,7 @@ public class FactController {
 	public Optional<Factura> getById(@PathVariable String num_fac){
 		return facturaService.findBy_Id(Long.parseLong(num_fac));
 	}
+	
 	@PostMapping("/facturas/{id_cli}")
 	public Iterable<Factura> createFactura(@PathVariable String id_cli){
 		return facturaService.createRandomFactura(Integer.parseInt(id_cli));
@@ -35,4 +36,5 @@ public class FactController {
 	public Iterable<Factura> facturaFinished(@PathVariable String num_fac, @PathVariable("rfc_fac") String rfc_fac, @PathVariable String formapago){
 		return facturaService.updateFactura(Integer.parseInt(num_fac), rfc_fac.replace(" ", ""), Integer.parseInt(formapago));
 	}
+	
 }

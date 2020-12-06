@@ -15,4 +15,5 @@ public interface IFactDao extends CrudRepository<Factura, Long>{
 	
 	@Query(value = "{call factura_RFCFormaPago(:num_fac, :rfc_fac, :formapago)}", nativeQuery = true)
 	Iterable<Factura> updateFacturaFinished(@Param("num_fac") int num_fac, @Param("rfc_fac") String rfc_fac, @Param("formapago") int formapago );
+	
 }

@@ -41,6 +41,6 @@ public class FactServiceImpl implements IFactService{
 	public Optional<Factura> findBy_Id(Long id) {
 		return facturaDao.findById(id);
 	}
-	
+
 
 }
