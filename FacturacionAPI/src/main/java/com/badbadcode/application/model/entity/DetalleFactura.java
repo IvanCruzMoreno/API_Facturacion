@@ -21,9 +21,9 @@ public class DetalleFactura implements Serializable{
 	private Long cantidad_producto;
 	@Column(name = "sub_total")
 	private Float sub_total;
-	@Id
 	@JoinColumn(name = "tipo_producto")
 	private Long tipo_producto;
+	@Id
 	@JoinColumn(name = "id_factura")
 	private Long id_factura;
 	

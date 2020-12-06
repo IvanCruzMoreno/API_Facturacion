@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+
 import javax.persistence.Table;
 
 @Entity
@@ -114,6 +116,13 @@ public class Cliente implements Serializable{
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [numero_cliente=" + numero_cliente + ", nombre=" + nombre + ", apellido_m=" + apellido_m
+				+ ", apellido_p=" + apellido_p + ", fecha_nac=" + fecha_nac + ", sexo=" + sexo + ", e_civil=" + e_civil
+				+ ", tel=" + tel + ", email=" + email + "]";
 	}
 
 	

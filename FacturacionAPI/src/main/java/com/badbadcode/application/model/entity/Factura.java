@@ -31,15 +31,17 @@ public class Factura implements Serializable{
 	@Column(name = "RFC")
 	private String RFC;
 	@Column(name = "total_articulos")
-	private int total_articulos;
+	private Integer total_articulos;
 	@Column(name = "total")
-	private float total;
+	private Float total;
+	@Column(name ="IVA")
+	private Float IVA;
 	@Column(name = "total_neto")
-	private float total_neto;
+	private Float total_neto;
 	@JoinColumn(name = "numero_cliete")
-	private int numero_cliente;
+	private Integer numero_cliente;
 	@JoinColumn(name = "id_forma_pago")
-	private int id_forma_pago;
+	private Integer id_forma_pago;
 	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -56,19 +58,19 @@ public class Factura implements Serializable{
 	public String getRFC() {
 		return RFC;
 	}
-	public int getTotal_articulos() {
+	public Integer getTotal_articulos() {
 		return total_articulos;
 	}
-	public float getTotal() {
+	public Float getTotal() {
 		return total;
 	}
-	public float getTotal_neto() {
+	public Float getTotal_neto() {
 		return total_neto;
 	}
-	public int getNumero_cliente() {
+	public Integer getNumero_cliente() {
 		return numero_cliente;
 	}
-	public int getId_forma_pago() {
+	public Integer getId_forma_pago() {
 		return id_forma_pago;
 	}
 	public void setId_factura(Long id_factura) {
@@ -97,6 +99,12 @@ public class Factura implements Serializable{
 	}
 	public void setId_forma_pago(int id_forma_pago) {
 		this.id_forma_pago = id_forma_pago;
+	}
+	public Float getIVA() {
+		return IVA;
+	}
+	public void setIVA(float iVA) {
+		IVA = iVA;
 	}
 	
 	

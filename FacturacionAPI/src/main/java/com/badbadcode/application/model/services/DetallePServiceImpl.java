@@ -17,4 +17,29 @@ public class DetallePServiceImpl implements IDetallePService{
 		return detalleDao.findAll();
 	}
 
+	@Override
+	public String calculateProducto_DetalleFac(int num_fact, int cod_prod, int cantidad) {
+		try {
+			detalleDao.updateProductoAndDetalleFac(num_fact, cod_prod, cantidad);
+			return "Query exitosa";
+		} catch (Exception e) {
+			return "Error encontrado\n Revisa el stock de producto";
+		}
+	}
+
+	@Override
+	public Iterable<DetalleFactura> deleteDetalleFac(int id_fac, int tipo_prod) {
+		
+		//detalleDao.deleteById(id_fac);
+		try {
+			return detalleDao.deleteByIdDetalle_IdProduto(id_fac, tipo_prod);
+		}catch(Exception e) {
+			System.out.println("Error al interar eliminar");
+			return null;
+		}
+		
+	}
+
+
+
 }
