@@ -1,5 +1,7 @@
 package com.badbadcode.application.model.services;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,11 +14,6 @@ public class DetallePServiceImpl implements IDetallePService{
 	@Autowired
 	private IDetallePDAO detalleDao;
 	
-	@Override
-	public Iterable<DetalleFactura> findAll() {
-		return detalleDao.findAll();
-	}
-
 	@Override
 	public String calculateProducto_DetalleFac(int num_fact, int cod_prod, int cantidad) {
 		try {

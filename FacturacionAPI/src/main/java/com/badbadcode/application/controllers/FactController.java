@@ -1,5 +1,7 @@
 package com.badbadcode.application.controllers;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +22,10 @@ public class FactController {
 	@GetMapping("/facturas")
 	public Iterable<Factura> index(){
 		return facturaService.findAll();
+	}
+	@GetMapping("/facturas/{num_fac}")
+	public Optional<Factura> getById(@PathVariable String num_fac){
+		return facturaService.findBy_Id(Long.parseLong(num_fac));
 	}
 	@PostMapping("/facturas/{id_cli}")
 	public Iterable<Factura> createFactura(@PathVariable String id_cli){

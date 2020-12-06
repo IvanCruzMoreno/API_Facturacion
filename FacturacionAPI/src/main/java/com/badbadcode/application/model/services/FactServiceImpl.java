@@ -2,6 +2,8 @@ package com.badbadcode.application.model.services;
 
 
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,11 +29,17 @@ public class FactServiceImpl implements IFactService{
 	@Override
 	public Iterable<Factura> updateFactura(int num_fac, String rfc_fac, int formapago) {
 		try {
+			
 			return facturaDao.updateFacturaFinished(num_fac, rfc_fac, formapago);
 		} catch (Exception e) {
 			System.out.println("No se finalizo correctamente la factura");
 			return null;
 		}
+	}
+
+	@Override
+	public Optional<Factura> findBy_Id(Long id) {
+		return facturaDao.findById(id);
 	}
 	
 

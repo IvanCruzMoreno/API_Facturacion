@@ -10,6 +10,9 @@ import com.badbadcode.application.model.entity.DetalleFactura;
 
 @Repository
 public interface IDetallePDAO extends CrudRepository<DetalleFactura, Long>{
+	
+	@Query(value = "{call detalleFac_findById(:id)}", nativeQuery = true)
+	Iterable<DetalleFactura> findAllStoredProcedure(@Param("id") Long id);
 
 	@Query(value = "{call detalle_producto_AreThereStock(:num_fact, :cod_prod, :cantidad)}", nativeQuery = true)
 	void updateProductoAndDetalleFac(@Param("num_fact") int num_fact,
